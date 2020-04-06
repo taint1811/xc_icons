@@ -15,23 +15,12 @@
   "style": "css/all.css",
   "sideEffects": false,
   "scripts": {
-    "clean": "rimraf css js/{brand,flag,free} png sprites",
-    "css": "npm-run-all --parallel css-compile* --sequential css-prefix css-concat css-minify*",
-    "css-compile-free": "node-sass --output-style expanded --source-map true --source-map-contents true --precision 6 scss/free/free-icons.scss css/free.css",
-    "css-compile-brand": "node-sass --output-style expanded --source-map true --source-map-contents true --precision 6 scss/brand/brand-icons.scss css/brand.css",
-    "css-compile-flag": "node-sass --output-style expanded --source-map true --source-map-contents true --precision 6 scss/flag/flag-icons.scss css/flag.css",
-    "css-prefix": "postcss --config build/postcss.config.js --replace \"css/*.css\" \"!css/*.min.css\"",
-    "css-concat": "concat -o css/all.css css/free.css css/brand.css css/flag.css",
-    "css-minify": "cleancss --level 1 --source-map --source-map-inline-sources --output css/all.min.css css/all.css",
-    "css-minify-free": "cleancss --level 1 --source-map --source-map-inline-sources --output css/free.min.css css/free.css",
-    "css-minify-brands": "cleancss --level 1 --source-map --source-map-inline-sources --output css/brand.min.css css/brand.css",
-    "css-minify-flag": "cleancss --level 1 --source-map --source-map-inline-sources --output css/flag.min.css css/flag.css",
+    "clean": "rimraf js/{brand,flag,free,common} png sprites",
     "build": "npm-run-all --sequential build-*",
     "build-js-files": "node build/build-js-files.js",
     "build-svg-sprites": "node build/build-svg-sprites.js",
     "build-png": "node build/generate-png.js",
-    "dist": "npm-run-all --sequential clean css build",
-    "watch-css": "nodemon --ignore dist/ -e scss -x \"npm run css\""
+    "dist": "npm-run-all --sequential clean build"
   },
   "devDependencies": {
     "clean-css-cli": "^4.3.0",

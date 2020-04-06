@@ -1,8 +1,6 @@
 const fs = require('fs')
 const mkdirp = require('mkdirp');
-const dirnames = process.mainModule.filename.includes('pro') ?
-    ['solid', 'linear']
-  : ['free', 'brand', 'flag']
+const dirnames = ['free', 'brand', 'flag', 'common']
 
 let allNames = {}
 dirnames.forEach(setName => {

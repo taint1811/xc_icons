@@ -1,14 +1,14 @@
 const fs = require('fs')
-const dirnames = process.mainModule.filename.includes('pro') ? 
-  ['solid', 'linear'] :
-  ['flag', 'brand', 'free']
+const dirnames = ['flag', 'brand', 'free', 'common']
+  
 
 const prefixes = {
   brand: 'cib-',
   flag: 'cif-',
   free: 'cil-',
   linear: 'cil-',
-  solid: 'cis-'
+  solid: 'cis-',
+  common: 'xic-',
 }
 console.log(dirnames)
 dirnames.forEach(name => {

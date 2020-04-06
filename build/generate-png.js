@@ -1,9 +1,7 @@
 const sharp = require('sharp')
 const fs = require('fs')
 const mkdirp = require('mkdirp');
-const dirnames = process.mainModule.filename.includes('pro') ?
-    ['solid', 'linear']
-  : ['free', 'brand', 'flag']
+const dirnames = ['free', 'brand', 'flag', 'common']
 const dest = 'png/'
 const sizes = [16, 32, 64, 128, 256]
 

@@ -1,15 +1,14 @@
 const fs = require('fs')
 const mkdirp = require('mkdirp');
-const dirnames = process.mainModule.filename.includes('pro') ?
-    ['solid', 'linear']
-  : ['free', 'brand', 'flag']
+const dirnames = ['free', 'brand', 'flag', 'common']
 
 const prefixes = {
   brand:  'cib-',
   flag:   'cif-',
   free:   'cil-',
   linear: 'cil-',
-  solid:  'cis-'
+  solid:  'cis-',
+  common: 'xic-',
 } 
 
 const getAttributeValue = (string, attribute) => {
